@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus Calculator</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_HTML"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://files.arifrahmadi.id/calculusapp/css/main.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900">
+    <header class="py-4">
+        <h1 class="text-5xl mt-3 text-white text-center judul">
+            Kalkulus
+        </h1>
+        <p class="text-base text-center mt-1 text-slate-200">
+            Aplikasi ini untuk melengkapi tugas<br>
+            besar mata kuliah <span class="font-medium text-white">Kalkulus</span>.
+        </p>
+    </header>
+    <section class="p-3">
+        <div class="boxx mx-auto">
+            <div class="grid grid-cols-1 gap-6">
+                <button type="button" id="panduan" class="block w-full px-6 py-2.5 bg-purple-600 text-white font-medium leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out">Panduan</button>
+                <form id="formula-input">
+                    {% csrf_token %}
+                    <label for="small" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pilih rumus</label>
+                    <select id="small" name="formula-option" class="block mb-3 w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option selected>--</option>
+                        <option value="1">Turunan Dasar</option>
+                        <option value="2">Turunan Trigonometri</option>
+                        <option value="3">Persamaan Kuadrat</option>
+                    </select>
+                    <div class="relative mb-3">
+                        <input type="text" name="formula" id="floating_outlined" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                        <label for="floating_outlined" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Masukkan formula</label>
+                    </div>
+                    <button type="submit" class="block w-full mb-3 px-6 py-2.5 bg-green-600 text-white font-medium leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out">Submit</button>
+                    <button type="reset" class="block w-full mb-3 px-6 py-2.5 bg-red-600 text-white font-medium leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out">Reset</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section id="result-box">
+        <div class="flex justify-center mt-2 mb-3">
+            <div class="block rounded-lg shadow-lg bg-slate-100 w-72 max-w-sm text-center">
+              <div class="p-6">
+                <h4 class="text-gray-900 text-xl font-medium mb-2">Formula</h4>
+                <p id="formula" class="text-gray-700 text-base mb-4 latex"></p>
+                <h4 class="text-gray-900 text-xl font-medium mb-2">Result</h4>
+                <p id="result" class="text-gray-700 text-base mb-4 latex"></p>
+                <button type="button" class="close-result-box inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Close this window</button>
+              </div>
+            </div>
+          </div>
+    </section>
+    <footer class="py-3">
+        <p class="text-sm text-slate-200 text-center">
+            Made with &#x2764; by <a href="#" class="about-me no-underline hover:underline">Arif Rahmadi</a>
+        </p>
+    </footer>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://files.arifrahmadi.id/calculusapp/js/main.js"></script>
+</body>
+</html>
