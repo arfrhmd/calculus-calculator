@@ -8,7 +8,6 @@ def calculus(request):
     return render(request, "index.html")
 
 def calculate(request):
-    # y = Symbol('y')
     if request.method == 'POST':
         formula = request.POST['formula']
         if request.POST['formula-option'] == '1':
