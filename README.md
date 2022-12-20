@@ -26,4 +26,4 @@ _This app has been created for calculate the calculus formula (web-based) that c
 
 ## Lisensi / License
 
-Dilisensikan dibawah Educational Community License. Lihat file ![LICENSE](./LICENSE) untuk informasi lebih lanjut. / _Licensed under Educational Community License. See ![LICENSE](./LICENSE) for more information._
+Dilisensikan dibawah Educational Community License. Lihat file [LICENSE](./LICENSE) untuk informasi lebih lanjut. / _Licensed under Educational Community License. See [LICENSE](./LICENSE) for more information._
