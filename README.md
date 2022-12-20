@@ -1,4 +1,4 @@
-<div align="center"> <img src="https://raw.githubusercontent.com/arfrhmd/calculus-calculator/master/banner.png" width="600px"> </div>
+<div align="center"> <img src="https://raw.githubusercontent.com/arfrhmd/calculus-calculator/master/banner.png"> </div>
 
 ##  Apa itu Kalkulator Kalkulus? / _What is it?_
 
